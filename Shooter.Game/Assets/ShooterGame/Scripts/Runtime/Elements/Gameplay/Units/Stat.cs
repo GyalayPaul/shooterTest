@@ -17,7 +17,7 @@ namespace Shooter
             }
             set
             {
-                if (value < MaxValue && value > MinValue && value != CurrentValueInternal)
+                if (value <= MaxValue && value >= MinValue && value != CurrentValueInternal)
                 {
                     CurrentValueInternal = value;
                     OnValueChanged?.Invoke(CurrentValueInternal);
@@ -38,9 +38,17 @@ namespace Shooter
         public void Change(int value)
         {
             CurrentValue = Mathf.Clamp(CurrentValue + value, MinValue, MaxValue);
+            if (CurrentValue == MinValue) OnMinValueReached?.Invoke();
         }
 
         public Action<int> OnValueChanged;
+        public Action OnMinValueReached;
 
+        public Stat(int maxValue, int currentValue, int minValue = 0)
+        {
+            MaxValue = maxValue;
+            CurrentValueInternal = currentValue;
+            MinValue = minValue;
+        }
     }
 }

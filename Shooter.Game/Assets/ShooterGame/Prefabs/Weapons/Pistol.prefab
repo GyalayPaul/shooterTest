@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2059383768314530656}
   - component: {fileID: 2059383768315300672}
   - component: {fileID: 2059383768316299648}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Bullet_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2059383768314530658}
   - component: {fileID: 2059383768315300674}
   - component: {fileID: 2059383768316299650}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_BaseModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2059383768314530660}
   - component: {fileID: 2059383768315300676}
   - component: {fileID: 2059383768316299652}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Bullet_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 2059383768314530662}
   - component: {fileID: 2059383768315300678}
   - component: {fileID: 2059383768316299654}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Bullet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 2059383768314530664}
   - component: {fileID: 2059383768315300680}
   - component: {fileID: 2059383768316299656}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Bullet_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 2059383768314530666}
   - component: {fileID: 2059383768315300682}
   - component: {fileID: 2059383768316299658}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Bullet_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 2059383768314530668}
   - component: {fileID: 2059383768315300684}
   - component: {fileID: 2059383768316299660}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Hummer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 2059383768314530670}
   - component: {fileID: 2059383768315300686}
   - component: {fileID: 2059383768316299662}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Bullet_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 2059383768314530672}
   - component: {fileID: 7978814812248195997}
   - component: {fileID: 8310054715450650658}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,6 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793dc249870efc746a07afce7916d86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wielder: {fileID: 0}
   View: {fileID: 8310054715450650658}
 --- !u!114 &8310054715450650658
 MonoBehaviour:
@@ -734,7 +735,7 @@ GameObject:
   - component: {fileID: 2059383768314530674}
   - component: {fileID: 2059383768315300690}
   - component: {fileID: 2059383768316299666}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_MagazineAssembly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059383768314530676}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,7 +856,7 @@ GameObject:
   - component: {fileID: 2059383768314530678}
   - component: {fileID: 2059383768315300688}
   - component: {fileID: 2059383768316299664}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DW_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5060683110676474376}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

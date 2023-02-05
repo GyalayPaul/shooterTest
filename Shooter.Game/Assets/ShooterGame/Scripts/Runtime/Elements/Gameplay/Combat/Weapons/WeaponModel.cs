@@ -5,6 +5,7 @@ namespace Shooter
 {
     public class WeaponModel
     {
+        public WeaponController Controller; 
         public WeaponDefinition Definition { get; private set; }
         public int CurrentMagazineAmmo = 0;
         public int CurrentStoredAmmo = 0;
@@ -29,6 +30,16 @@ namespace Shooter
             var reloadValueNeeded = Definition.BaseMagazineAmmoCapacity - CurrentMagazineAmmo;
             CurrentStoredAmmo -= reloadValueNeeded;
             CurrentMagazineAmmo = Definition.BaseMagazineAmmoCapacity;
+        }
+
+        public WeaponModel(WeaponController controller, WeaponDefinition definition)
+        {
+            Controller = controller;
+            Init(definition);
+        }
+        public Damage GetDamage()
+        {
+            return new Damage(Definition.BaseDamage, Controller.Wielder,   DamageType.Ranged);
         }
     }
 }

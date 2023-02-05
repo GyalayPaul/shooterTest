@@ -18,7 +18,7 @@ namespace Shooter.UI
         {
             ScoreDisplay.ShowLevel(level);
             HealthDisplay.ShowUnit(level.Player);
-            WeaponDisplay.ShowWeapon(level.Player.EquippedWeapon);
+            WeaponDisplay.ShowWeapon(level.Player.PlayerModel.Arsenal.EquippedWeapon);
         }
     }
 }

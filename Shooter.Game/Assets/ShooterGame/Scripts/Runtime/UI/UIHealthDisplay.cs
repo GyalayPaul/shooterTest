@@ -9,7 +9,7 @@ namespace Shooter.UI
 {
     public class UIHealthDisplay : MonoBehaviour
     {
-        protected Unit CurrentUnit { get; set; } = null;
+        protected UnitController CurrentUnit { get; set; } = null;
 
         [SerializeField]
         protected Image HealthBarFill;
@@ -20,22 +20,22 @@ namespace Shooter.UI
         {
             if (HealthBarFill == null) Debug.LogError("UIHealthDisplay: HealthBarFill is not assigned!");
         }
-        public void ShowUnit(Unit unit)
+        public void ShowUnit(UnitController unit)
         {
             if (unit != CurrentUnit)
             {
                 ClearUnit();
                 CurrentUnit = unit;
-                unit.Health.OnValueChanged += UpdateHealthbarFill;
+                unit.Model.Health.OnValueChanged += UpdateHealthbarFill;
             }
-            UpdateHealthbarFill(CurrentUnit.Health.CurrentValue);
+            UpdateHealthbarFill(CurrentUnit.Model.Health.CurrentValue);
         }
 
         public void ClearUnit()
         {
             if (CurrentUnit != null)
             {
-                CurrentUnit.Health.OnValueChanged -= UpdateHealthbarFill;
+                CurrentUnit.Model.Health.OnValueChanged -= UpdateHealthbarFill;
                 CurrentUnit = null;
             }
         }
@@ -45,7 +45,7 @@ namespace Shooter.UI
             if (CurrentUnit != null)
             {
                 HealthBarFill.DOKill();
-                HealthBarFill.DOFillAmount(currentValue / CurrentUnit.Health.MaxValue, BAR_ANIMATION_DURATION);
+                HealthBarFill.DOFillAmount(currentValue / CurrentUnit.Model.Health.MaxValue, BAR_ANIMATION_DURATION);
             }
         }
     }

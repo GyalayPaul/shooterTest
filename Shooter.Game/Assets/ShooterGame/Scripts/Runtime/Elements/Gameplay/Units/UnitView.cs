@@ -4,11 +4,8 @@ using UnityEngine;
 
 namespace Shooter
 {
-    public class Unit : MonoBehaviour
+    public class UnitView : MonoBehaviour
     {
-        public Stat Health;
+
     }
-
-
-
 }

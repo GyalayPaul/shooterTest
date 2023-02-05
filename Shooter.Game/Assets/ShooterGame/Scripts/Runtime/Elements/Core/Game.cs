@@ -22,12 +22,9 @@ namespace Shooter
 
         public UIManager UIManager;
         public LevelManager LevelManager;
-        public Player Player; 
-
-
+        public UnitManager UnitManager;
         public void Start()
         {
-            LevelManager.StartLevel();
         }
     }
 }

@@ -7,14 +7,14 @@ namespace Shooter
 {
     public class LevelManager : MonoBehaviour
     {
-        public Level ActiveLevel=null;
-        public Action OnLevelStarted; 
+        public Level ActiveLevel = null;
+        public Action OnLevelStarted;
 
-        public void StartLevel()
+
+        public void StartLevel(LevelSettings levelSettings)
         {
-            ActiveLevel = new Level();
-            ActiveLevel.Player = Game.Instance.Player;
-
+           
+            ActiveLevel = new Level(levelSettings);
             OnLevelStarted?.Invoke();
         }
     }

@@ -12,7 +12,9 @@ namespace Shooter
         public float BaseReloadDuration = 2;
         public float BaseShotCooldown = 0.25f;
         public int BaseDamage = 5;
+        public DamageType DamageType = DamageType.Ranged;
         public int BaseAmmoPerShot = 1;
-        public WeaponController ModelPrefab; 
+        public float MaxRange = 25;
+        public WeaponController ModelPrefab;
     }
 }

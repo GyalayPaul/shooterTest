@@ -7,6 +7,7 @@ namespace Shooter
 {
     public class WeaponController : MonoBehaviour
     {
+        public UnitController Wielder;
         public WeaponModel Model { get; protected set; }
         public WeaponView View;
 
@@ -17,10 +18,10 @@ namespace Shooter
         protected bool IsReloading = false;
         protected bool IsInShotCooldown = false;
 
-        public void InitWeapon(WeaponDefinition definition)
+        public void InitWeapon(WeaponDefinition definition, UnitController wielder)
         {
-            Model = new WeaponModel();
-            Model.Init(definition);
+            Model = new WeaponModel(this, definition);
+            Wielder = wielder;
             View = GetComponent<WeaponView>();
             if (View == null)
                 View = gameObject.AddComponent<WeaponView>();
@@ -50,9 +51,25 @@ namespace Shooter
         {
             Model.HandleShootCost();
             View.HandleShootEffects();
+            DoRaycastShot();
             OnWeaponShot?.Invoke();
             IsInShotCooldown = true;
             Invoke(nameof(EndShootCooldown), Model.Definition.BaseShotCooldown);
+        }
+
+        protected void DoRaycastShot()
+        {
+            var Damage = Model.GetDamage();
+            var WeaponRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(WeaponRay, out hit, Model.Definition.MaxRange))
+            {
+                var UnitController = hit.transform.gameObject.GetComponent<UnitController>();
+                if (UnitController)
+                {
+                    UnitController.ApplyDamage(Damage);
+                }
+            }
         }
 
         protected virtual void EndShootCooldown()

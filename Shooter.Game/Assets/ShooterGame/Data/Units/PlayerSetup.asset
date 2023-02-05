@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf96124d0dcd384f9853287c9f0273f, type: 3}
+  m_Name: PlayerSetup
+  m_EditorClassIdentifier: 
+  BaseMaxHealth: 100
+  BaseStartingHealth: 100
+  BaseMovementSpeed: 5
+  Prefab: {fileID: 8701524743492084363, guid: 019da1986154bd84b944f1a18c1975b8, type: 3}
+  StartingWeapon: {fileID: 11400000, guid: af79f9b23b7c81b47bbe288b7827a8a2, type: 2}

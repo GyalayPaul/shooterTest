@@ -16,7 +16,9 @@ MonoBehaviour:
   BaseMaxStoredAmmoCapacity: 160
   BaseReloadDuration: 2
   BaseShotCooldown: 0.25
-  BaseDamage: 5
+  BaseDamage: 25
+  DamageType: 1
   BaseAmmoPerShot: 1
+  MaxRange: 25
   ModelPrefab: {fileID: 7978814812248195997, guid: 63663f28c21553643b00eac875a2c4c6,
     type: 3}

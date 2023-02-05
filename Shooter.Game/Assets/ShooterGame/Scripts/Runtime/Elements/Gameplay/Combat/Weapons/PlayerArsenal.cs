@@ -7,7 +7,7 @@ namespace Shooter
 {
     public class PlayerArsenal
     {
-        public Unit Owner;
+        public UnitController Owner;
         public Transform ArsenalParent;
         public List<WeaponController> Weapons = new List<WeaponController>();
         public WeaponController EquippedWeapon = null;
@@ -17,7 +17,7 @@ namespace Shooter
         public void AddWeapon(WeaponDefinition definition)
         {
             var weaponController = UnityEngine.Object.Instantiate(definition.ModelPrefab, ArsenalParent);
-            weaponController.InitWeapon(definition);
+            weaponController.InitWeapon(definition,Owner);
             
             Weapons.Add(weaponController);
             OnWeaponAddedToArsenal?.Invoke(weaponController);
@@ -28,7 +28,7 @@ namespace Shooter
                 OnWeaponEquipped?.Invoke(weaponController);
             }
         }
-        public PlayerArsenal(Unit owner, Transform weaponParent)
+        public PlayerArsenal(UnitController owner, Transform weaponParent)
         {
             Owner = owner;
             ArsenalParent = weaponParent;
