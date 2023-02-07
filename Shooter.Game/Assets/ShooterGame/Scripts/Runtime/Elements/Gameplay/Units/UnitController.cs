@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Shooter
     {
         public UnitModel Model;
         public UnitView View;
+        public Action<Damage> OnDeath;
 
         public virtual void Init(UnitDefinition definition)
         {
@@ -23,7 +25,7 @@ namespace Shooter
 
         public virtual void Die(Damage damageSource)
         {
-            Game.Instance.UnitManager.RegisterUnitDeath(this, damageSource);
+            OnDeath?.Invoke(damageSource);
             Destroy(gameObject);
         }
     }

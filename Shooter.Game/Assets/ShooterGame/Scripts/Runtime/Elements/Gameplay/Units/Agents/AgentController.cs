@@ -25,11 +25,11 @@ namespace Shooter
             SightComponent = gameObject.AddComponent<AgentSightComponent>();
             SightComponent.Init(this);
         }
-        public void Attack(UnitController Target)
+        public void Attack(UnitController target)
         {
             var damage = AgentModel.GetAttacKDamage();
             AgentView.HandleAttackEffects();
-            Target.ApplyDamage(damage);
+            damage.Apply(target);
         }
     }
 }

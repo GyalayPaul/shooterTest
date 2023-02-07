@@ -5,12 +5,15 @@ using UnityEngine;
 
 namespace Shooter
 {
-    public class Level
+    public class Level : MonoBehaviour
     {
-
         public Action OnScoreChanged;
+        public Action OnLevelEnded;
         public PlayerController Player;
         public LevelSettings LevelSettings;
+
+        public UnitManager UnitManager;
+
         public int Score
         {
             get
@@ -25,22 +28,31 @@ namespace Shooter
         }
         protected int ScoreInternal = 0;
 
-
-        public Level(LevelSettings level)
+        public void Init(LevelSettings level)
         {
+            InitUnitManager();
             Player = SpawnPlayer(level);
-            Game.Instance.UnitManager.OnKillingBlowDealt += HandleKillingBlow;
             foreach (var spawner in level.Spawners)
             {
-                Game.Instance.UnitManager.SpawnEnemy(level.EnemyDefinition, spawner);
+                UnitManager.SpawnEnemy(level.EnemyDefinition, spawner);
             }
+        }
 
+        private void InitUnitManager()
+        {
+            var go = new GameObject("UnitManager");
+            go.transform.parent = transform;
+            UnitManager = go.AddComponent<UnitManager>();
+            UnitManager.OnKillingBlowDealt += HandleKillingBlow;
         }
 
         public PlayerController SpawnPlayer(LevelSettings levelSettings)
         {
             LevelSettings = levelSettings;
-            Player = Game.Instance.UnitManager.SpawnUnit(levelSettings.PlayerDef, levelSettings.PlayerStartPosition.transform.position) as PlayerController;
+            Player = UnitManager.SpawnUnit(levelSettings.PlayerDef, levelSettings.PlayerStartPosition.transform.position) as PlayerController;
+            Player.OnDeath += (_) => { 
+                EndLevel(); 
+            };
             return Player;
         }
 
@@ -48,6 +60,11 @@ namespace Shooter
         {
             if (killingBlow.Source == Player && killingBlow.Target != Player)
                 Score++;
+        }
+
+        private void EndLevel()
+        {
+            OnLevelEnded?.Invoke();
         }
     }
 }

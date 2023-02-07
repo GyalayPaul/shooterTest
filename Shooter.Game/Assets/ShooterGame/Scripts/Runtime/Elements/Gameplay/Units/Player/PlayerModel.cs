@@ -18,6 +18,14 @@ namespace Shooter
 
             Arsenal = new PlayerArsenal(Controller, (Controller as PlayerController).WeaponParent);
             Arsenal.AddWeapon(startingWeaponDef);
+
+            Health.OnMinValueReached += Die;
+        }
+
+        public override void Die()
+        {
+            base.Die();
+            
         }
     }
 }

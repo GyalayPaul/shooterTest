@@ -18,8 +18,6 @@ namespace Shooter
         public Action<Damage> OnKillingBlowDealt;
         public List<UnitController> Units = new List<UnitController>();
 
-        public LayerMask UnitsLayerMask;
-
         public AgentController SpawnEnemy(AgentDefinition unitDef, EnemySpawner spawner)
         {
             var Agent = SpawnUnit(unitDef, spawner.SpawnTransform.position) as AgentController;
@@ -32,41 +30,20 @@ namespace Shooter
             var spawnedUnit = Instantiate(unit.Prefab, transform);
             spawnedUnit.transform.position = position;
             spawnedUnit.Init(unit);
+            spawnedUnit.OnDeath += RegisterUnitDeath;
             Units.Add(spawnedUnit);
+            
             return spawnedUnit;
         }
 
-        public void RegisterUnitDeath(UnitController unit, Damage killingBlow)
+
+        public void RegisterUnitDeath(Damage killingBlow)
         {
+            var unit = killingBlow.Target;
             Debug.Log("[Unit Manager] :  Unit " + unit.gameObject.name + "was killed by " + killingBlow.ToString());
             OnKillingBlowDealt?.Invoke(killingBlow);
             Units.Remove(unit);
         }
 
-        public List<UnitController> GetUnitsInRange(Vector3 origin, float range)
-        {
-            var units = new List<UnitController>();
-            var colliders = Physics.OverlapSphere(origin, range, UnitsLayerMask);
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                var unitController = colliders[i].GetComponent<UnitController>();
-                if (unitController)
-                    units.Add(unitController);
-            }
-            return units;
-        }
-
-        public List<UnitController> GetUnitsInRange(Vector3 origin, float range, Faction faction)
-        {
-            var units = new List<UnitController>();
-            var colliders = Physics.OverlapSphere(origin, range, UnitsLayerMask);
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                var unitController = colliders[i].GetComponent<UnitController>();
-                if (unitController != null && unitController?.Model?.Definition?.Faction == faction)
-                    units.Add(unitController);
-            }
-            return units;
-        }
     }
 }

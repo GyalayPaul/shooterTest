@@ -9,13 +9,16 @@ namespace Shooter
     {
         public Level ActiveLevel = null;
         public Action OnLevelStarted;
-
+        public Action OnLevelEnded;
 
         public void StartLevel(LevelSettings levelSettings)
         {
-           
-            ActiveLevel = new Level(levelSettings);
+            var go = new GameObject("Level");
+            ActiveLevel = go.AddComponent<Level>();
+            ActiveLevel.Init(levelSettings);
+            ActiveLevel.gameObject.name = "LEVEL";
             OnLevelStarted?.Invoke();
+            ActiveLevel.OnLevelEnded += OnLevelEnded;
         }
     }
 }

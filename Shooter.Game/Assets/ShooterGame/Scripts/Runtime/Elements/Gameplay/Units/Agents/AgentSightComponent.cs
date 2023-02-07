@@ -8,7 +8,7 @@ namespace Shooter
     {
         public AgentController Agent;
         public AgentDefinition AgentDefinition => Agent.AgentModel.AgentDefinition;
-        protected UnitManager UnitManager => Game.Instance.UnitManager;
+        protected UnitManager UnitManager => Game.Instance.LevelManager.ActiveLevel.UnitManager;
 
         public void Init(AgentController agent)
         {
@@ -17,7 +17,7 @@ namespace Shooter
         }
         public UnitController GetFirstVisibleEnemy()
         {
-            var viableTargets = UnitManager.GetUnitsInRange(transform.position, AgentDefinition.SightRange, Faction.Player);
+            var viableTargets = UnitUtils.GetUnitsInRange(transform.position, AgentDefinition.SightRange, Faction.Player);
 
             for (int i = 0; i < viableTargets.Count; i++)
             {

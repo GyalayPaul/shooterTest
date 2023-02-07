@@ -15,6 +15,6 @@ MonoBehaviour:
   BaseMaxHealth: 100
   BaseStartingHealth: 100
   BaseMovementSpeed: 5
-  Prefab: {fileID: 8701524743492084363, guid: 019da1986154bd84b944f1a18c1975b8, type: 3}
+  Prefab: {fileID: 4763948086752363791, guid: f60de5029dfde544b97f90eb692e3e3a, type: 3}
   Faction: 1
   StartingWeapon: {fileID: 11400000, guid: af79f9b23b7c81b47bbe288b7827a8a2, type: 2}

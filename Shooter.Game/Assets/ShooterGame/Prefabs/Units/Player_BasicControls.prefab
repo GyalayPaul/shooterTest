@@ -217,7 +217,6 @@ GameObject:
   - component: {fileID: 5159206393395546898}
   - component: {fileID: 5159206393395546909}
   - component: {fileID: 5159206393395546908}
-  - component: {fileID: 5159206393395546899}
   m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
@@ -290,20 +289,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5159206393395546899
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5159206393395546897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8851046886174138119
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +443,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 8194680389732376353}
+  m_Camera: {fileID: 0}
 --- !u!114 &4763948086752363791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20df66416e09db240aa65842d0ce76bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  Controller: {fileID: 0}
 --- !u!114 &653882768032440198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,7 +493,7 @@ MonoBehaviour:
     type: 3}
   look: {fileID: 8758038636793419114, guid: 4923ea53be64666498e9e9c3207f5efc, type: 3}
   MouseSensitivity: 100
-  PlayerCamera: {fileID: 8194680389732376353}
+  PlayerCamera: {fileID: 6573422394195458698}
   UseBasicControls: 1
 --- !u!1001 &955222853391900868
 PrefabInstance:
@@ -515,6 +502,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3756889439528904283}
     m_Modifications:
+    - target: {fileID: 4906128391471669679, guid: 2d3a85ecde41a8246a79669975912b74,
+        type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906128391471669679, guid: 2d3a85ecde41a8246a79669975912b74,
+        type: 3}
+      propertyPath: m_Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 955222852396615966}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_RootOrder
@@ -590,21 +587,60 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4906128391471669679, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+    - {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
---- !u!20 &8194680389732376353 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
-    type: 3}
-  m_PrefabInstance: {fileID: 955222853391900868}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8194680389732376355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74,
     type: 3}
   m_PrefabInstance: {fileID: 955222853391900868}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &955222853268587519
+--- !u!20 &6573422394195458698
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194680389732376355}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.972549, g: 0.95686275, b: 0.92941177, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.2
+  far clip plane: 5000
+  field of view: 65
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 55
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!114 &3418718721354315516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,7 +664,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

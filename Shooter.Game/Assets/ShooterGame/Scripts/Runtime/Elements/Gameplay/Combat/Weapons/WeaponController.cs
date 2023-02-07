@@ -65,10 +65,10 @@ namespace Shooter
             RaycastHit hit;
             if (Physics.Raycast(WeaponRay, out hit, Model.Definition.MaxRange))
             {
-                var UnitController = hit.transform.gameObject.GetComponent<UnitController>();
-                if (UnitController)
+                var unitController = hit.transform.gameObject.GetComponent<UnitController>();
+                if (unitController)
                 {
-                    UnitController.ApplyDamage(Damage);
+                    Damage.Apply(unitController);
                 }
             }
         }

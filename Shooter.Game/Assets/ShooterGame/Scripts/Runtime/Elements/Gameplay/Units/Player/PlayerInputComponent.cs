@@ -71,17 +71,11 @@ namespace Shooter
         {
             movementInput = movement.action.ReadValue<Vector2>();
             Vector3 move = (movementInput.x * transform.right) + (movementInput.y * transform.forward);
-            CharacterController.Move(move * Controller.Model.Definition.BaseMovementSpeed * Time.deltaTime);
+            CharacterController.Move((move + (Vector3.down * 9.8f)) * Controller.Model.Definition.BaseMovementSpeed * Time.deltaTime);
         }
 
         #endregion
 
-        private Vector2 GetPointerInput()
-        {
-            mousePosition = look.action.ReadValue<Vector2>();
-            mousePosition.z = Camera.main.nearClipPlane;
-            return Camera.main.ScreenToWorldPoint(mousePosition);
-        }
 
         private void ShootWeapon(InputAction.CallbackContext obj)
         {

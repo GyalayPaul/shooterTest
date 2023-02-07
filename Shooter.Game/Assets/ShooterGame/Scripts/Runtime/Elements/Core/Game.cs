@@ -12,7 +12,6 @@ namespace Shooter
             if (Instance == null)
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
             }
             else
             {
@@ -22,7 +21,6 @@ namespace Shooter
 
         public UIManager UIManager;
         public LevelManager LevelManager;
-        public UnitManager UnitManager;
         public void Start()
         {
         }

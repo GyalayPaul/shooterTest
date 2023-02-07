@@ -29,6 +29,16 @@ namespace Shooter
             {
                 Debug.LogError("PlayerController: InputComponent not assigned!");
             }
+
+            Model.OnDeath += Die;
+
+        }
+
+        public override void Die(Damage damageSource)
+        {
+            InputComponent.enabled = false;
+            OnDeath?.Invoke(damageSource);
+
         }
 
     }

@@ -14,7 +14,7 @@ namespace Shooter.AI
         {
             var behaviour = stateManager as EnemyStateMachine;
             // If the target dies or is null, return to patrolling. 
-            if (behaviour.CurrentTarget == null)
+            if (behaviour.CurrentTarget == null || behaviour.CurrentTarget.Model.Alive == false)
             {
                 return OnStateExit((stateManager as EnemyStateMachine).PatrolState);
             }

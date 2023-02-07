@@ -7,6 +7,31 @@ namespace Shooter
     public static class UnitUtils
     {
 
+        public static List<UnitController> GetUnitsInRange(Vector3 origin, float range)
+        {
+            var units = new List<UnitController>();
+            var colliders = Physics.OverlapSphere(origin, range, 1 << LayerMask.NameToLayer("Unit"));
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                var unitController = colliders[i].GetComponent<UnitController>();
+                if (unitController && (unitController?.Model?.Alive == true))
+                    units.Add(unitController);
+            }
+            return units;
+        }
+
+        public static List<UnitController> GetUnitsInRange(Vector3 origin, float range, Faction faction)
+        {
+            var units = new List<UnitController>();
+            var colliders = Physics.OverlapSphere(origin, range, 1 << LayerMask.NameToLayer("Unit"));
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                var unitController = colliders[i].GetComponent<UnitController>();
+                if (unitController != null &&( unitController?.Model?.Definition?.Faction == faction) && (unitController?.Model?.Alive == true))
+                    units.Add(unitController);
+            }
+            return units;
+        }
         public static bool TargetIsWithinVisisonCone(Transform target, Vector3 lookDirection, float coneAngle, Transform looker)
         {
             var direction = target.transform.position - looker.position;
