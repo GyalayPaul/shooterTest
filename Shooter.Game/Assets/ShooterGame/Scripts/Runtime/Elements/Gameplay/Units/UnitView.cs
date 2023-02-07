@@ -6,6 +6,8 @@ namespace Shooter
 {
     public class UnitView : MonoBehaviour
     {
+        public AudioSource AudioSource;
+        public UnitController Controller; 
 
     }
 }

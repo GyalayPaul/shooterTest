@@ -30,7 +30,11 @@ namespace Shooter
         {
             Player = SpawnPlayer(level);
             Game.Instance.UnitManager.OnKillingBlowDealt += HandleKillingBlow;
-            Game.Instance.UnitManager.SpawnUnit(level.EnemyDefinition, level.EnemySpawnPosition.transform.position);
+            foreach (var spawner in level.Spawners)
+            {
+                Game.Instance.UnitManager.SpawnEnemy(level.EnemyDefinition, spawner);
+            }
+
         }
 
         public PlayerController SpawnPlayer(LevelSettings levelSettings)

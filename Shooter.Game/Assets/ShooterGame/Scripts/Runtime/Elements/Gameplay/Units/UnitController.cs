@@ -13,6 +13,7 @@ namespace Shooter
         {
             Model = new UnitModel(definition,this);
             Model.OnDeath += Die;
+            View.Controller = this;
         }
 
         public virtual void ApplyDamage(Damage damage)

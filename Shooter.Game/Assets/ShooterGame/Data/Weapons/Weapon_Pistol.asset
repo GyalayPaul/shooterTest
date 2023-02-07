@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseMagazineAmmoCapacity: 6
   BaseMaxStoredAmmoCapacity: 160
-  BaseReloadDuration: 2
+  BaseReloadDuration: 0.75
   BaseShotCooldown: 0.25
   BaseDamage: 25
   DamageType: 1
@@ -22,3 +22,12 @@ MonoBehaviour:
   MaxRange: 25
   ModelPrefab: {fileID: 7978814812248195997, guid: 63663f28c21553643b00eac875a2c4c6,
     type: 3}
+  ShootSounds:
+  - {fileID: 8300000, guid: 0d9f85d9ea69a734895afc382b692db2, type: 3}
+  - {fileID: 8300000, guid: 85ca42f0dfd72424a84a1669cbcd53b9, type: 3}
+  ReloadSounds:
+  - {fileID: 8300000, guid: 279f27971ffce90469a343baa2ac430e, type: 3}
+  ReloadEndSounds:
+  - {fileID: 8300000, guid: e8775ce9d9caacb47aeedbae9142fc1b, type: 3}
+  EmptyWeaponShootSounds:
+  - {fileID: 8300000, guid: f70e652c9b14e2a45a2aedb5250daa68, type: 3}

@@ -45,7 +45,7 @@ namespace Shooter.UI
             if (CurrentUnit != null)
             {
                 HealthBarFill.DOKill();
-                HealthBarFill.DOFillAmount(currentValue / CurrentUnit.Model.Health.MaxValue, BAR_ANIMATION_DURATION);
+                HealthBarFill.DOFillAmount((float)currentValue / (float)CurrentUnit.Model.Health.MaxValue, BAR_ANIMATION_DURATION);
             }
         }
     }

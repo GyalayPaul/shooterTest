@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58d28c70c0ddee4282869c36e9a8e39, type: 3}
+  m_Name: RangedEnemy
+  m_EditorClassIdentifier: 
+  BaseMaxHealth: 100
+  BaseStartingHealth: 100
+  BaseMovementSpeed: 10
+  Prefab: {fileID: 4870500481370548620, guid: f3691a7d3da31e04694513aabadb87aa, type: 3}
+  Faction: 2
+  SightRange: 8
+  SightAngle: 45
+  AttackDamage: 15
+  AttackRange: 8
+  DamageType: 1
+  AttackCooldown: 2
+  AttackSounds:
+  - {fileID: 8300000, guid: f5f89e66adbfcf141943ed995032182e, type: 3}
+  - {fileID: 8300000, guid: 0751eafcc3a9dab468a07c9744d210f5, type: 3}

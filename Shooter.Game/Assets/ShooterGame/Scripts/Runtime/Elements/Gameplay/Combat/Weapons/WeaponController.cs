@@ -25,6 +25,7 @@ namespace Shooter
             View = GetComponent<WeaponView>();
             if (View == null)
                 View = gameObject.AddComponent<WeaponView>();
+            View.Controller = this;
         }
 
         public void HandleWeaponShootInput()

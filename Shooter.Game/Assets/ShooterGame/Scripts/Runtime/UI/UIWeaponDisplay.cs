@@ -53,7 +53,7 @@ namespace Shooter.UI
         }
         protected void UpdateAmmoLabel()
         {
-            AmmoLabel.text = CurrentWeapon.Model.CurrentMagazineAmmo + "/" + CurrentWeapon.Model.Definition.BaseMaxStoredAmmoCapacity;
+            AmmoLabel.text = CurrentWeapon.Model.CurrentMagazineAmmo + "/" + CurrentWeapon.Model.CurrentStoredAmmo;
         }
         protected void UpdateAmmoBar()
         {

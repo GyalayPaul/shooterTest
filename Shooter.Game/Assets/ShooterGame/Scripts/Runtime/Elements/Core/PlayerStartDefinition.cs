@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Shooter
 {
-    [CreateAssetMenu(fileName = "PlayerSetup", menuName = "ScriptableObjects/PlayerSetup")]
+    [CreateAssetMenu(fileName = "PlayerSetup", menuName = "ScriptableObjects/Units/Player")]
     public class PlayerStartDefinition : UnitDefinition
     {
         public WeaponDefinition StartingWeapon; 

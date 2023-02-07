@@ -16,3 +16,4 @@ MonoBehaviour:
   BaseStartingHealth: 50
   BaseMovementSpeed: 10
   Prefab: {fileID: 7167573251752632216, guid: fa86848990d68f745b9ec96b1cf12c3b, type: 3}
+  Faction: 2

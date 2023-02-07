@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 4763948086752363791}
   - component: {fileID: 4553078221222543271}
   - component: {fileID: 653882768032440198}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Player_BasicControls
   m_TagString: Player
   m_Icon: {fileID: 0}

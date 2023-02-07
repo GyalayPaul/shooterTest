@@ -16,5 +16,10 @@ namespace Shooter
         public int BaseAmmoPerShot = 1;
         public float MaxRange = 25;
         public WeaponController ModelPrefab;
+
+        public List<AudioClip> ShootSounds;
+        public List<AudioClip> ReloadSounds;
+        public List<AudioClip> ReloadEndSounds;
+        public List<AudioClip> EmptyWeaponShootSounds;
     }
 }
