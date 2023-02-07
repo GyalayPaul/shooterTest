@@ -21,18 +21,30 @@ namespace Shooter
         public AgentController SpawnEnemy(AgentDefinition unitDef, EnemySpawner spawner)
         {
             var Agent = SpawnUnit(unitDef, spawner.SpawnTransform.position) as AgentController;
+            Agent.NaveMeshAgent.enabled = false;
             Agent.PatrolComponent.SetPatrol(spawner.PotentialPatrols[UnityEngine.Random.Range(0, spawner.PotentialPatrols.Count)].Waypoints);
+            Agent.NaveMeshAgent.enabled = true;
             return Agent;
+        }
+
+        internal int GetUnitsOfType(AgentDefinition agent)
+        {
+            int quantity = 0;
+            foreach (var unit in Units)
+                if (unit.Model.Definition.Id == agent.Id)
+                    quantity++;
+            return quantity;
         }
 
         public UnitController SpawnUnit(UnitDefinition unit, Vector3 position)
         {
+
             var spawnedUnit = Instantiate(unit.Prefab, transform);
             spawnedUnit.transform.position = position;
             spawnedUnit.Init(unit);
             spawnedUnit.OnDeath += RegisterUnitDeath;
             Units.Add(spawnedUnit);
-            
+
             return spawnedUnit;
         }
 

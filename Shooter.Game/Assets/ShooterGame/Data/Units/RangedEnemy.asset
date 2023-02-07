@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58d28c70c0ddee4282869c36e9a8e39, type: 3}
   m_Name: RangedEnemy
   m_EditorClassIdentifier: 
+  Id: enemy.ranged
   BaseMaxHealth: 100
   BaseStartingHealth: 100
   BaseMovementSpeed: 10
   Prefab: {fileID: 4870500481370548620, guid: f3691a7d3da31e04694513aabadb87aa, type: 3}
   Faction: 2
   SightRange: 8
-  SightAngle: 45
-  AttackDamage: 15
+  AggroRange: 16
+  SightAngle: 120
+  AttackDamage: 10
   AttackRange: 8
   DamageType: 1
   AttackCooldown: 2

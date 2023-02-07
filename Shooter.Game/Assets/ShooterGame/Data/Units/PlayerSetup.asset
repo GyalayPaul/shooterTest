@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf96124d0dcd384f9853287c9f0273f, type: 3}
   m_Name: PlayerSetup
   m_EditorClassIdentifier: 
+  Id: player
   BaseMaxHealth: 100
   BaseStartingHealth: 100
   BaseMovementSpeed: 5

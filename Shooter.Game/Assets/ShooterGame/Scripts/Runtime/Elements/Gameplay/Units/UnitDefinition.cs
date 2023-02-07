@@ -8,6 +8,7 @@ namespace Shooter
     [CreateAssetMenu(fileName = "Units", menuName = "ScriptableObjects/Units/Generic Unit")]
     public class UnitDefinition : ScriptableObject
     {
+        public string Id = "";
         public int BaseMaxHealth =100;
         public int BaseStartingHealth = 100;
         public int BaseMovementSpeed = 10;

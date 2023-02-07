@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 2373163374717341960}
   - component: {fileID: 4870500481370548620}
   - component: {fileID: 4870500481370548338}
-  - component: {fileID: 1846162313340811496}
   - component: {fileID: 3149293794407319846}
   - component: {fileID: 6483776578410040803}
+  - component: {fileID: 3697075131222232794}
   m_Layer: 6
   m_Name: MeleeEnemy
   m_TagString: Untagged
@@ -149,7 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   View: {fileID: 6483776578410040803}
   NaveMeshAgent: {fileID: 4870500481370548338}
-  StateMachine: {fileID: 1846162313340811496}
+  StateMachine: {fileID: 3697075131222232794}
+  PatrolComponent: {fileID: 0}
+  SightComponent: {fileID: 0}
 --- !u!195 &4870500481370548338
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -172,20 +174,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1846162313340811496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2373163374717341965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de9571c40a5ca5e45a95f6c6958e4990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Unit: {fileID: 4870500481370548620}
-  CurrentTarget: {fileID: 0}
 --- !u!82 &3149293794407319846
 AudioSource:
   m_ObjectHideFlags: 0
@@ -296,6 +284,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 3149293794407319846}
   Controller: {fileID: 0}
+--- !u!114 &3697075131222232794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373163374717341965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46f77ae93c20a546a3dad6f8622e761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Unit: {fileID: 4870500481370548620}
+  CurrentStateName: 
+  CurrentTarget: {fileID: 0}
 --- !u!1 &5697236225109415904
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 60db2ec8bed96cf4f98caae400ad3ecc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

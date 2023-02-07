@@ -18,14 +18,19 @@ namespace Shooter
         public Transform SpawnTransform;
         public List<Patrol> PotentialPatrols;
     }
+
+    [Serializable]
+    public class EnemyRosterEntry
+    {
+        public AgentDefinition Agent;
+        public int Quantity; 
+    }
     public class LevelSettings : MonoBehaviour
     {
         public Transform PlayerStartPosition;
-        public Transform EnemySpawnPosition; 
-        public WeaponDefinition PlayerStartingWeapon;
         public PlayerStartDefinition PlayerDef;
-        public AgentDefinition EnemyDefinition;
 
+        public List<EnemyRosterEntry> EnemyRoster; 
         public List<EnemySpawner> Spawners; 
         public void Awake()
         {

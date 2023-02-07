@@ -11,6 +11,7 @@ namespace Shooter
         public Action OnLevelEnded;
         public PlayerController Player;
         public LevelSettings LevelSettings;
+        public LevelEnemyRosterComponent EnemyRosterComponent;
 
         public UnitManager UnitManager;
 
@@ -31,11 +32,13 @@ namespace Shooter
         public void Init(LevelSettings level)
         {
             InitUnitManager();
+            EnemyRosterComponent = new LevelEnemyRosterComponent(this, level.EnemyRoster, level.Spawners);
             Player = SpawnPlayer(level);
-            foreach (var spawner in level.Spawners)
+            EnemyRosterComponent.UpdateEnemies();
+            UnitManager.OnKillingBlowDealt += (_) =>
             {
-                UnitManager.SpawnEnemy(level.EnemyDefinition, spawner);
-            }
+                EnemyRosterComponent.UpdateEnemies();
+            };
         }
 
         private void InitUnitManager()
@@ -50,8 +53,9 @@ namespace Shooter
         {
             LevelSettings = levelSettings;
             Player = UnitManager.SpawnUnit(levelSettings.PlayerDef, levelSettings.PlayerStartPosition.transform.position) as PlayerController;
-            Player.OnDeath += (_) => { 
-                EndLevel(); 
+            Player.OnDeath += (_) =>
+            {
+                EndLevel();
             };
             return Player;
         }

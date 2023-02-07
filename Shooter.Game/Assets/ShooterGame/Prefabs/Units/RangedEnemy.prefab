@@ -150,6 +150,8 @@ MonoBehaviour:
   View: {fileID: 6483776578410040803}
   NaveMeshAgent: {fileID: 4870500481370548338}
   StateMachine: {fileID: 5113837967075575814}
+  PatrolComponent: {fileID: 0}
+  SightComponent: {fileID: 0}
 --- !u!195 &4870500481370548338
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -359,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f3f78b3505c8bd3419ee270394c0d6cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -7,6 +7,7 @@ namespace Shooter
     [CreateAssetMenu(fileName = "Agent", menuName = "ScriptableObjects/Units/Agent")]
     public class AgentDefinition : UnitDefinition
     {
+        
         public float SightRange=10;
         public float AggroRange = 16;
         public float SightAngle=60;

@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58d28c70c0ddee4282869c36e9a8e39, type: 3}
   m_Name: MeleeEnemy
   m_EditorClassIdentifier: 
+  Id: enemy.melee
   BaseMaxHealth: 100
   BaseStartingHealth: 100
   BaseMovementSpeed: 10
   Prefab: {fileID: 4870500481370548620, guid: a4bbfff33a76a1e4d9e96da9939741f3, type: 3}
   Faction: 2
   SightRange: 8
-  SightAngle: 45
+  AggroRange: 16
+  SightAngle: 120
   AttackDamage: 15
   AttackRange: 2
   DamageType: 2
-  AttackCooldown: 1
+  AttackCooldown: 0.5
   AttackSounds:
   - {fileID: 8300000, guid: 90e9be51ce7d6f5489565096fd381c3e, type: 3}
   - {fileID: 8300000, guid: f1bb4b500f4fece438f722bef7ab6299, type: 3}
