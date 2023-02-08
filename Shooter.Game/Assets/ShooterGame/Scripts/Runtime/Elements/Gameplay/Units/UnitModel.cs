@@ -21,20 +21,24 @@ namespace Shooter
             Controller = controller;
             Health = new Stat(definition.BaseMaxHealth, definition.BaseStartingHealth);
             Health.OnMinValueReached += Die;
-            
+
         }
 
         public virtual void ApplyDamage(Damage damage)
         {
-           
+
             Health.Change(-damage.Value);
             lastDamageApplied = damage;
         }
 
         public virtual void Die()
         {
-            Alive = false;
-            OnDeath?.Invoke(lastDamageApplied);
+
+            if (Alive)
+            {
+                Alive = false;
+                OnDeath?.Invoke(lastDamageApplied);
+            }
         }
 
     }

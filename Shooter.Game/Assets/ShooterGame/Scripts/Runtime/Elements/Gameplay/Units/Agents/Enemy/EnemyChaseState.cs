@@ -51,6 +51,9 @@ namespace Shooter.AI
 
         public override AgentState OnStateEnter(AgentState PreviousState, AgentStateMachine behaviour)
         {
+
+            if (behaviour.Unit.AgentView.Animator)
+                behaviour.Unit.AgentView.Animator.SetFloat("Speed", 1, 0, Time.deltaTime);
             HuntBarkTimer =  Random.Range(behaviour.Unit.Definition.HuntSoundsWaitRange.x/2, behaviour.Unit.Definition.HuntSoundsWaitRange.y/2);
             Debug.Log("Entered Chase State!");
             return this;

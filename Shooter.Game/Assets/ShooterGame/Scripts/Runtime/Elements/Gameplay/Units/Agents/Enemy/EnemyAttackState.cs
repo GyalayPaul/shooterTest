@@ -54,7 +54,11 @@ namespace Shooter.AI
 
         public override AgentState OnStateEnter(AgentState PreviousState, AgentStateMachine behaviour)
         {
-           behaviour.Unit.NaveMeshAgent.isStopped = true;
+
+
+            if (behaviour.Unit.AgentView.Animator)
+                behaviour.Unit.AgentView.Animator.SetFloat("Speed", 0, 0, Time.deltaTime);
+            behaviour.Unit.NaveMeshAgent.isStopped = true;
             Debug.Log("Entered Attack State!");
             return this;
         }

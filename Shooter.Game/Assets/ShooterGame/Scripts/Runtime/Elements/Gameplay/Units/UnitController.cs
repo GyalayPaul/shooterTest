@@ -13,14 +13,15 @@ namespace Shooter
 
         public virtual void Init(UnitDefinition definition)
         {
-            Model = new UnitModel(definition,this);
+            Model = new UnitModel(definition, this);
             Model.OnDeath += Die;
             View.Controller = this;
         }
 
         public virtual void ApplyDamage(Damage damage)
         {
-            Model.ApplyDamage(damage);
+            if (Model.Alive)
+                Model.ApplyDamage(damage);
         }
 
         public virtual void Die(Damage damageSource)

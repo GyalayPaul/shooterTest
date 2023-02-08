@@ -6,9 +6,18 @@ namespace Shooter
     public class AgentView : UnitView
     {
         public AgentController AgentController => Controller as AgentController;
+
+        public void Awake()
+        {
+
+            Animator = GetComponent<Animator>();
+        }
         public void HandleAttackEffects()
         {
+            if (Animator)
+                Animator?.SetTrigger("Attack");
             PlayRandomizedOneshotSound(AgentController.Definition.AttackSounds);
+
         }
 
         public void DoIdleBark()
@@ -26,11 +35,13 @@ namespace Shooter
             PlayRandomizedOneshotSound(AgentController.Definition.HurtSounds);
         }
 
-        public void DoDeathSound()
+        public void DoDeathEffects()
         {
+            if (Animator)
+                Animator.SetTrigger("Dead");
             PlayRandomizedOneshotSound(AgentController.Definition.DeathSounds);
         }
-        private void PlayRandomizedOneshotSound(List<AudioClip> clips, float volume= 1, float pitchvariation = 0.05f)
+        private void PlayRandomizedOneshotSound(List<AudioClip> clips, float volume = 1, float pitchvariation = 0.05f)
         {
             if (clips.Count <= 0) return;
             var clip = clips[Random.Range(0, clips.Count)];

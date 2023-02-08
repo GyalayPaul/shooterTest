@@ -28,6 +28,7 @@ namespace Shooter
         }
         public void Attack(UnitController target)
         {
+            
             var damage = AgentModel.GetAttacKDamage();
             AgentView.HandleAttackEffects();
             damage.Apply(target);
@@ -38,8 +39,8 @@ namespace Shooter
             OnDeath?.Invoke(damageSource);
             StateMachine.enabled = false;
             NaveMeshAgent.enabled = false;
-            AgentView.DoDeathSound();
-            transform.DOScale(0, 1f).onComplete=() => { SelfDestruct(); }; //todo: move to view
+            AgentView.DoDeathEffects();
+            transform.DOScale( AgentView.Animator!=null ? transform.localScale.x:0, 1f).onComplete=() => { SelfDestruct(); }; //todo: move to view and make less hardcoded
         }
 
         public void SelfDestruct()

@@ -16,7 +16,7 @@ MonoBehaviour:
   BaseMaxHealth: 100
   BaseStartingHealth: 100
   BaseMovementSpeed: 10
-  Prefab: {fileID: 4870500481370548620, guid: a4bbfff33a76a1e4d9e96da9939741f3, type: 3}
+  Prefab: {fileID: 6190511731470413155, guid: b205eb769055a78478a7e50426195f28, type: 3}
   Faction: 2
   SightRange: 8
   AggroRange: 16
@@ -24,7 +24,7 @@ MonoBehaviour:
   AttackDamage: 15
   AttackRange: 2
   DamageType: 2
-  AttackCooldown: 0.5
+  AttackCooldown: 1.2
   AttackSounds:
   - {fileID: 8300000, guid: 92632ef03eaf2794f8a9eb83812ae8b1, type: 3}
   - {fileID: 8300000, guid: d6c4ab3f66f5fb94bb9778dde60927f3, type: 3}
@@ -50,5 +50,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b2618cf9b6ea8ef4780b21356da22c82, type: 3}
   DeathSounds:
   - {fileID: 8300000, guid: 64fb7d41ac0eba945bb90d3994d32d64, type: 3}
-  - {fileID: 8300000, guid: d395f1ef08ffc9641b627c4342cb7623, type: 3}
-  - {fileID: 8300000, guid: c2e1b26abf3f36c459c8c162f0f5fe3d, type: 3}

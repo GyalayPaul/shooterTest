@@ -28,6 +28,10 @@ namespace Shooter.AI
 
         public override AgentState OnStateEnter(AgentState PreviousState, AgentStateMachine behaviour)
         {
+
+
+            if (behaviour.Unit.AgentView.Animator)
+                behaviour.Unit.AgentView.Animator.SetFloat("Speed", 0, 0, Time.deltaTime);
             Debug.Log("Entered Idle State!");
             return this;
         }

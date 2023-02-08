@@ -15,7 +15,7 @@ namespace Shooter.AI
 
             // If there's nowhere to patrol go to idle.
             if (!unit.CanPatrol)
-                 return OnStateExit(behaviour.IdleState);
+                return OnStateExit(behaviour.IdleState);
 
             //Bark Timer
             if (IdleBarkCooldown <= 0)
@@ -39,7 +39,11 @@ namespace Shooter.AI
             if (navmeshAgent.remainingDistance < 0.25f)
             {
                 unit.PatrolComponent.MoveNextTarget();
+
+                if (behaviour.Unit.AgentView.Animator)
+                    unit.AgentView.Animator.SetFloat("Speed", 1, 0, Time.deltaTime);
                 navmeshAgent.SetDestination(unit.PatrolComponent.CurrentTarget.position);
+
             }
             return this;
         }
@@ -49,7 +53,10 @@ namespace Shooter.AI
             var navmeshAgent = behaviour.Unit.NaveMeshAgent;
             navmeshAgent.isStopped = false;
             navmeshAgent.SetDestination(behaviour.Unit.PatrolComponent.CurrentTarget.position);
-            IdleBarkCooldown = Random.Range(behaviour.Unit.Definition.IdleSoundsWaitRange.x/2, behaviour.Unit.Definition.IdleSoundsWaitRange.y/2);
+
+            if (behaviour.Unit.AgentView.Animator)
+                behaviour.Unit.AgentView.Animator.SetFloat("Speed", 1, 0, Time.deltaTime);
+            IdleBarkCooldown = Random.Range(behaviour.Unit.Definition.IdleSoundsWaitRange.x / 2, behaviour.Unit.Definition.IdleSoundsWaitRange.y / 2);
             Debug.Log("Entered Patrol State!");
             return this;
         }
