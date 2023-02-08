@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RangedEnemy
   m_EditorClassIdentifier: 
   Id: enemy.ranged
-  BaseMaxHealth: 100
-  BaseStartingHealth: 100
+  BaseMaxHealth: 50
+  BaseStartingHealth: 50
   BaseMovementSpeed: 10
   Prefab: {fileID: 4870500481370548620, guid: f3691a7d3da31e04694513aabadb87aa, type: 3}
   Faction: 2
@@ -26,5 +26,28 @@ MonoBehaviour:
   DamageType: 1
   AttackCooldown: 2
   AttackSounds:
-  - {fileID: 8300000, guid: f5f89e66adbfcf141943ed995032182e, type: 3}
-  - {fileID: 8300000, guid: 0751eafcc3a9dab468a07c9744d210f5, type: 3}
+  - {fileID: 8300000, guid: f57bce9d42c383c4789a72d94a6787d0, type: 3}
+  IdleSounds:
+  - {fileID: 8300000, guid: 9914296530a61b942a13ace0f7f961b5, type: 3}
+  - {fileID: 8300000, guid: 71c1aae65a8979641b4dce6d576095bc, type: 3}
+  - {fileID: 8300000, guid: 20af9f3df14e58c4bbd172df71553378, type: 3}
+  - {fileID: 8300000, guid: c9f4b179dd82e6342b80f17dfaefd868, type: 3}
+  - {fileID: 8300000, guid: 7fdc2bfc8229e21498f48cf8a04ea14f, type: 3}
+  - {fileID: 8300000, guid: 9633fce4adeb56142af033acaa611344, type: 3}
+  IdleSoundsWaitRange: {x: 3, y: 10}
+  HuntSounds:
+  - {fileID: 8300000, guid: 8887d9c74fe8c9542b4ef1e99c7bfb84, type: 3}
+  - {fileID: 8300000, guid: 68140023d6568c3448ddbe717415ef09, type: 3}
+  - {fileID: 8300000, guid: 8e4ec38989437b94c84f20ad42863d3b, type: 3}
+  - {fileID: 8300000, guid: 511f120cfb67b7646b59f16f587298c8, type: 3}
+  - {fileID: 8300000, guid: 01c1c3653c4bc9646a1219f9575f50d8, type: 3}
+  - {fileID: 8300000, guid: 13fc093ee4f7f084c84e30c18f2f9845, type: 3}
+  HuntSoundsWaitRange: {x: 3, y: 6}
+  HurtSounds:
+  - {fileID: 8300000, guid: 16b5bb9dcc81d2340baa804faf15ab78, type: 3}
+  - {fileID: 8300000, guid: 566eb5d9a8b1a364b9301ae7e76ab4a6, type: 3}
+  - {fileID: 8300000, guid: 55dd9388f87dad64bb3a088340642f93, type: 3}
+  - {fileID: 8300000, guid: 3e697c744dc74aa4ab1738e8373f1c66, type: 3}
+  DeathSounds:
+  - {fileID: 8300000, guid: 9c732e573ec6f8f4e865a4c6dbf9b32f, type: 3}
+  - {fileID: 8300000, guid: 5d28de6b90734e8429413c8e56e5fa50, type: 3}

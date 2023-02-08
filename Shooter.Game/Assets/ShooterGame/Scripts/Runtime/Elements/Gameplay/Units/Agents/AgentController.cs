@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Shooter.AI;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,6 +31,20 @@ namespace Shooter
             var damage = AgentModel.GetAttacKDamage();
             AgentView.HandleAttackEffects();
             damage.Apply(target);
+        }
+
+        public override void Die(Damage damageSource)
+        {
+            OnDeath?.Invoke(damageSource);
+            StateMachine.enabled = false;
+            NaveMeshAgent.enabled = false;
+            AgentView.DoDeathSound();
+            transform.DOScale(0, 1f).onComplete=() => { SelfDestruct(); }; //todo: move to view
+        }
+
+        public void SelfDestruct()
+        {
+            Destroy(gameObject);
         }
     }
 }

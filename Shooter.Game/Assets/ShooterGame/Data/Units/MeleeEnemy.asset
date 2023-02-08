@@ -26,6 +26,29 @@ MonoBehaviour:
   DamageType: 2
   AttackCooldown: 0.5
   AttackSounds:
-  - {fileID: 8300000, guid: 90e9be51ce7d6f5489565096fd381c3e, type: 3}
-  - {fileID: 8300000, guid: f1bb4b500f4fece438f722bef7ab6299, type: 3}
-  - {fileID: 8300000, guid: 2c9ec015b03ff3b4190cf5b60ab2b1ed, type: 3}
+  - {fileID: 8300000, guid: 92632ef03eaf2794f8a9eb83812ae8b1, type: 3}
+  - {fileID: 8300000, guid: d6c4ab3f66f5fb94bb9778dde60927f3, type: 3}
+  - {fileID: 8300000, guid: 6700549ee6c1b044296c265fb2dd704b, type: 3}
+  - {fileID: 8300000, guid: f91a35b1ddf94704bb1f8ccc6c7201da, type: 3}
+  IdleSounds:
+  - {fileID: 8300000, guid: b8f929d519ddad34eade235d108be527, type: 3}
+  - {fileID: 8300000, guid: 85efe7862ef7dc5459abbd8ca412da1f, type: 3}
+  - {fileID: 8300000, guid: 4639186a37fa7b84bb77bcc43c8fc629, type: 3}
+  - {fileID: 8300000, guid: 560f6ce40c430844fb4d56d2be3204b2, type: 3}
+  - {fileID: 8300000, guid: 82760a068fb2e8647aa4dd33cc69c2cc, type: 3}
+  IdleSoundsWaitRange: {x: 3, y: 10}
+  HuntSounds:
+  - {fileID: 8300000, guid: 23e3d7967f9785948905712cb5b43feb, type: 3}
+  - {fileID: 8300000, guid: b9dcdedaf016d534386b3ac92dcad52a, type: 3}
+  - {fileID: 8300000, guid: 5dda89cb8c6fe004ab4059dac3d2d73c, type: 3}
+  - {fileID: 8300000, guid: ae9b6c7940955c04d8881691e84fa066, type: 3}
+  - {fileID: 8300000, guid: b20fd54ec5bfa7d48b3e32e2af4d15b4, type: 3}
+  HuntSoundsWaitRange: {x: 3, y: 6}
+  HurtSounds:
+  - {fileID: 8300000, guid: b3e1f35e06e2dfe4b8796e516d0b2e9c, type: 3}
+  - {fileID: 8300000, guid: a6ba5aed0e034784dbb23cc7c195bf88, type: 3}
+  - {fileID: 8300000, guid: b2618cf9b6ea8ef4780b21356da22c82, type: 3}
+  DeathSounds:
+  - {fileID: 8300000, guid: 64fb7d41ac0eba945bb90d3994d32d64, type: 3}
+  - {fileID: 8300000, guid: d395f1ef08ffc9641b627c4342cb7623, type: 3}
+  - {fileID: 8300000, guid: c2e1b26abf3f36c459c8c162f0f5fe3d, type: 3}

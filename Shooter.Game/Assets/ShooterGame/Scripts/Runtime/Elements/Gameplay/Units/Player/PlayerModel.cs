@@ -25,7 +25,6 @@ namespace Shooter
         public override void Die()
         {
             base.Die();
-            
         }
     }
 }

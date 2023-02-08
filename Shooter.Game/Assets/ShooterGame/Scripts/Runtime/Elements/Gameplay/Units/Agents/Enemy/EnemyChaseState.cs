@@ -9,6 +9,7 @@ namespace Shooter.AI
     {
         public EnemyAttackState attackState;
         public bool isInAttackRange;
+        public float HuntBarkTimer = 5f;
 
         public override AgentState DoState(AgentStateMachine stateManager)
         {
@@ -26,6 +27,14 @@ namespace Shooter.AI
                 behaviour.CurrentTarget = null;
                 return OnStateExit((stateManager as EnemyStateMachine).PatrolState);
             }
+            // Do Bark timer
+            if (HuntBarkTimer <= 0)
+            {
+                stateManager.Unit.AgentView.DoHuntBark();
+                HuntBarkTimer = Random.Range(behaviour.Unit.Definition.HuntSoundsWaitRange.x, behaviour.Unit.Definition.HuntSoundsWaitRange.y);
+            }
+            else
+                HuntBarkTimer -= Time.deltaTime;
 
             stateManager.Unit.NaveMeshAgent.isStopped = false;
             // Check if can see and attack unit.
@@ -42,6 +51,7 @@ namespace Shooter.AI
 
         public override AgentState OnStateEnter(AgentState PreviousState, AgentStateMachine behaviour)
         {
+            HuntBarkTimer =  Random.Range(behaviour.Unit.Definition.HuntSoundsWaitRange.x/2, behaviour.Unit.Definition.HuntSoundsWaitRange.y/2);
             Debug.Log("Entered Chase State!");
             return this;
         }

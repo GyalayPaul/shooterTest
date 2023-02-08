@@ -18,6 +18,13 @@ namespace Shooter
 
         public List<AudioClip> AttackSounds = new List<AudioClip>();
 
+        public List<AudioClip> IdleSounds = new List<AudioClip>();
+        public Vector2 IdleSoundsWaitRange = new Vector2(3, 10);
+        public List<AudioClip> HuntSounds = new List<AudioClip>();
+        public Vector2 HuntSoundsWaitRange = new Vector2(3, 6); 
+        public List<AudioClip> HurtSounds = new List<AudioClip>();
+        public List<AudioClip> DeathSounds = new List<AudioClip>();
+
 
     }
 }

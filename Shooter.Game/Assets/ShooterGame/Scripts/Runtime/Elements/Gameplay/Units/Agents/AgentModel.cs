@@ -18,5 +18,12 @@ namespace Shooter
         {
             return new Damage(AgentDefinition.AttackDamage, Controller, AgentDefinition.DamageType);
         }
+
+        public override void ApplyDamage(Damage damage)
+        {
+
+            (Controller as AgentController).AgentView.DoHurtSound();
+            base.ApplyDamage(damage);
+        }
     }
 }

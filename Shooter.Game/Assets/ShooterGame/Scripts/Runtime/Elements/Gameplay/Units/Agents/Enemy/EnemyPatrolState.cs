@@ -6,6 +6,7 @@ namespace Shooter.AI
 {
     public class EnemyPatrolState : AgentState
     {
+        public float IdleBarkCooldown = 5f;
         public override AgentState DoState(AgentStateMachine stateManager)
         {
             var unit = stateManager.Unit;
@@ -16,6 +17,14 @@ namespace Shooter.AI
             if (!unit.CanPatrol)
                  return OnStateExit(behaviour.IdleState);
 
+            //Bark Timer
+            if (IdleBarkCooldown <= 0)
+            {
+                unit.AgentView.DoIdleBark();
+                IdleBarkCooldown = Random.Range(behaviour.Unit.Definition.IdleSoundsWaitRange.x, behaviour.Unit.Definition.IdleSoundsWaitRange.y);
+            }
+            else
+                IdleBarkCooldown -= Time.deltaTime;
 
             // Check for enemies while patroling.
             var validTarget = behaviour.Unit.SightComponent.GetFirstVisibleEnemy();
@@ -40,6 +49,7 @@ namespace Shooter.AI
             var navmeshAgent = behaviour.Unit.NaveMeshAgent;
             navmeshAgent.isStopped = false;
             navmeshAgent.SetDestination(behaviour.Unit.PatrolComponent.CurrentTarget.position);
+            IdleBarkCooldown = Random.Range(behaviour.Unit.Definition.IdleSoundsWaitRange.x/2, behaviour.Unit.Definition.IdleSoundsWaitRange.y/2);
             Debug.Log("Entered Patrol State!");
             return this;
         }
