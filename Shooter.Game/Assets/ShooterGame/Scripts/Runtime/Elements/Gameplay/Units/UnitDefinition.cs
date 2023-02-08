@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Definition Class for units containing basic info such as health, prefab , faction and IDs.
+    /// </summary>
     [CreateAssetMenu(fileName = "Units", menuName = "ScriptableObjects/Units/Generic Unit")]
     public class UnitDefinition : ScriptableObject
     {

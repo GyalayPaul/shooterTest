@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Definition class for weapons containing base stats for the weapon and sounds. 
+    /// </summary>
     [CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObjects/Weapon")]
     public class WeaponDefinition : ScriptableObject
     {

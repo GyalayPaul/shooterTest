@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter.UI
 {
+    /// <summary>
+    /// Manager class for UI-related functionalities. Links up to the Game class for specific-ui-related events. 
+    /// </summary>
     public class UIManager : MonoBehaviour
     {
         public UIHudScreen HUDScreen;

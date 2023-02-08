@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Shooter
 {
+    /// <summary>
+    /// Singleton-ish class used to handle the links between ui and game logic through the level manager. 
+    /// </summary>
     public class Game : MonoBehaviour
     {
         public static Game Instance;
@@ -18,11 +21,7 @@ namespace Shooter
                 Destroy(gameObject);
             }
         }
-
         public UIManager UIManager;
         public LevelManager LevelManager;
-        public void Start()
-        {
-        }
     }
 }

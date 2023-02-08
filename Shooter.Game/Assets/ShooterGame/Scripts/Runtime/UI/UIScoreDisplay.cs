@@ -7,6 +7,9 @@ using DG.Tweening;
 
 namespace Shooter.UI
 {
+    /// <summary>
+    /// Class used to show the score in a given level. 
+    /// </summary>
     public class UIScoreDisplay : MonoBehaviour
     {
 

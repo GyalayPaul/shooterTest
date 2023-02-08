@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Component for agents which is responsible for determining detecting other units.
+    /// </summary>
     public class AgentSightComponent : MonoBehaviour
     {
         public AgentController Agent;

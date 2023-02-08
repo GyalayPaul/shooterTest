@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter.AI
 {
+    /// <summary>
+    /// AI state for enemies where they chase a target until they are within attack range. When they are they will go into attack state, or if the target is too far away they go back in the patrol state.
+    /// </summary>
     public class EnemyChaseState : AgentState
     {
         public EnemyAttackState attackState;
@@ -36,7 +39,7 @@ namespace Shooter.AI
             else
                 HuntBarkTimer -= Time.deltaTime;
 
-            stateManager.Unit.NaveMeshAgent.isStopped = false;
+            stateManager.Unit.NavMeshAgent.isStopped = false;
             // Check if can see and attack unit.
             if (behaviour.Unit.SightComponent.TargetIsWithinAttackRange(target.transform))
             {
@@ -45,7 +48,7 @@ namespace Shooter.AI
             }
 
             //Continue moving towards target's position. (Maybe update every x seconds for optimization later on?)
-            stateManager.Unit.NaveMeshAgent.SetDestination((stateManager as EnemyStateMachine).CurrentTarget.transform.position);
+            stateManager.Unit.NavMeshAgent.SetDestination((stateManager as EnemyStateMachine).CurrentTarget.transform.position);
             return this;
         }
 

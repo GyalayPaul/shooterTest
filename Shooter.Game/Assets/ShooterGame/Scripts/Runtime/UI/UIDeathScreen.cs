@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 namespace Shooter.UI
 {
+    /// <summary>
+    /// Class for handling the death screen which appears after the player has died and the level has ended.
+    /// </summary>
     public class UIDeathScreen : MonoBehaviour
     {
         [SerializeField]

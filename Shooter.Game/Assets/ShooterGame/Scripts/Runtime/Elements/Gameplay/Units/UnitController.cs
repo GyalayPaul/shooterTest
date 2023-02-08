@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Generic controller for units, such as enemies or the player. Only contains basic information and should be inherited from for more specific types of units. 
+    /// </summary>
     public class UnitController : MonoBehaviour, IDamageable
     {
         public UnitModel Model;

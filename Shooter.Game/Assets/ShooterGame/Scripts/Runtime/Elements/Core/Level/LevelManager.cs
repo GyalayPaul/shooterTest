@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Class linked to the game singleton that's used to start levels. 
+    /// </summary>
     public class LevelManager : MonoBehaviour
     {
         public Level ActiveLevel = null;

@@ -25,6 +25,10 @@ namespace Shooter
         public AgentDefinition Agent;
         public int Quantity; 
     }
+
+    /// <summary>
+    /// Class that holds level-specific information and starts the level in the current scene. 
+    /// </summary>
     public class LevelSettings : MonoBehaviour
     {
         public Transform PlayerStartPosition;

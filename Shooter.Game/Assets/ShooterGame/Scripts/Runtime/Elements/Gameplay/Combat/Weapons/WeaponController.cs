@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Controller class for weapons, handles input, shooting, reloading and weapon initialization.
+    /// </summary>
     public class WeaponController : MonoBehaviour
     {
         public UnitController Wielder;

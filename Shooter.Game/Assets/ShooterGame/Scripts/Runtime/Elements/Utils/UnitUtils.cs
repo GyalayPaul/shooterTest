@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Utility class for unit-related methods.
+    /// </summary>
     public static class UnitUtils
     {
-
         public static List<UnitController> GetUnitsInRange(Vector3 origin, float range)
         {
             var units = new List<UnitController>();
@@ -27,7 +29,7 @@ namespace Shooter
             for (int i = 0; i < colliders.Length; i++)
             {
                 var unitController = colliders[i].GetComponent<UnitController>();
-                if (unitController != null &&( unitController?.Model?.Definition?.Faction == faction) && (unitController?.Model?.Alive == true))
+                if (unitController != null && (unitController?.Model?.Definition?.Faction == faction) && (unitController?.Model?.Alive == true))
                     units.Add(unitController);
             }
             return units;

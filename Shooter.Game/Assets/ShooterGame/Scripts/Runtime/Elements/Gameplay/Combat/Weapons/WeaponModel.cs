@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Shooter
 {
+    /// <summary>
+    /// Model class for weapons. Handles ammo, damage, and instanced stats based on the weapond defintion. 
+    /// </summary>
     public class WeaponModel
     {
         public WeaponController Controller; 

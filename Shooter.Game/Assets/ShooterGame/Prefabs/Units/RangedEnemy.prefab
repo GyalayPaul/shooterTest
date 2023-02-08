@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   View: {fileID: 6483776578410040803}
-  NaveMeshAgent: {fileID: 4870500481370548338}
+  NavMeshAgent: {fileID: 4870500481370548338}
   StateMachine: {fileID: 5113837967075575814}
   PatrolComponent: {fileID: 0}
   SightComponent: {fileID: 0}
@@ -284,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 3149293794407319846}
   Controller: {fileID: 0}
+  Animator: {fileID: 0}
 --- !u!114 &5113837967075575814
 MonoBehaviour:
   m_ObjectHideFlags: 0

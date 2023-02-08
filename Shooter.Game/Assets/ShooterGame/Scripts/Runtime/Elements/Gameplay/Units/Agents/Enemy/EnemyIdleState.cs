@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter.AI
 {
+    /// <summary>
+    /// AI state for enemies where it sits idly and looks for enemies. If assigned a patrol will go on patrol. 
+    /// </summary>
     public class EnemyIdleState : AgentState
     {
         public override AgentState DoState(AgentStateMachine stateManager)

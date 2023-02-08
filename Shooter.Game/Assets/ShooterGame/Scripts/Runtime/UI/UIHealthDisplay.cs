@@ -7,6 +7,9 @@ using DG.Tweening;
 
 namespace Shooter.UI
 {
+    /// <summary>
+    /// Class for handling a health bar which displays the health of a given unit. It's used to show the player's health in the HUD screen.
+    /// </summary>
     public class UIHealthDisplay : MonoBehaviour
     {
         protected UnitController CurrentUnit { get; set; } = null;

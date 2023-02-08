@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// View class for weapons. Handles visuals and effects such as partile effects, animations, sounds etc. for weapons. 
+    /// </summary>
     public class WeaponView : MonoBehaviour
     {
         public WeaponController Controller;
@@ -16,40 +19,28 @@ namespace Shooter
         }
         public void HandleShootEffects()
         {
+            if (Controller.Model.Definition.ShootSounds.Count < 1 || AudioSource == null) return;
 
-            if (Controller.Model.Definition.ShootSounds.Count < 1 || AudioSource== null) return;
-            AudioSource.Stop();
-            AudioSource.loop = false;
-            AudioSource.clip = Controller.Model.Definition.ShootSounds[Random.Range(0, Controller.Model.Definition.ShootSounds.Count)];
-            AudioSource.Play();
+            AudioUtils.PlayRandomizedOneshotSound(AudioSource, Controller.Model.Definition.ShootSounds);
         }
 
         public void HandleReloadStart()
         {
             if (Controller.Model.Definition.ReloadSounds.Count < 1 || AudioSource == null) return;
-            AudioSource.Stop();
-            AudioSource.loop = false;
-            AudioSource.clip = Controller.Model.Definition.ReloadSounds[Random.Range(0, Controller.Model.Definition.ReloadSounds.Count)];
-            AudioSource.Play();
+            AudioUtils.PlayRandomizedOneshotSound(AudioSource, Controller.Model.Definition.ReloadSounds);
         }
 
         public void HandleReloadEnd()
         {
             if (Controller.Model.Definition.ReloadEndSounds.Count < 1 || AudioSource == null) return;
-            AudioSource.Stop();
-            AudioSource.loop = false;
-            AudioSource.clip = Controller.Model.Definition.ReloadEndSounds[Random.Range(0, Controller.Model.Definition.ReloadEndSounds.Count)];
-            AudioSource.Play();
+            AudioUtils.PlayRandomizedOneshotSound(AudioSource, Controller.Model.Definition.ReloadEndSounds);
         }
 
         public void HandleEmptyWeaponShoot()
         {
             if (Controller.Model.Definition.EmptyWeaponShootSounds.Count < 1 || AudioSource == null) return;
-
-            AudioSource.Stop();
-            AudioSource.loop = false;
-            AudioSource.clip = Controller.Model.Definition.EmptyWeaponShootSounds[Random.Range(0, Controller.Model.Definition.EmptyWeaponShootSounds.Count)];
-            AudioSource.Play();
+            AudioUtils.PlayRandomizedOneshotSound(AudioSource, Controller.Model.Definition.EmptyWeaponShootSounds);
         }
+
     }
 }

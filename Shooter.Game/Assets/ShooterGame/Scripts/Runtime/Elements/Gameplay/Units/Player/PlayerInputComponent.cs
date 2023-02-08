@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Basic clasc player input class that handles player controlls such as moving,looking, shooting and reloading. 
+    /// </summary>
     public class PlayerInputComponent : MonoBehaviour
     {
-
         public CharacterController CharacterController;
         [HideInInspector]
         public PlayerController Controller;
@@ -23,7 +25,7 @@ namespace Shooter
         private float rotationX = 0f;
 
         /// <summary>
-        /// If the player should use basic controls instead of the example ones
+        /// If the player should use basic controls instead of the example ones from the starter asset pack.
         /// </summary>
         public bool UseBasicControls = false;
 
@@ -75,7 +77,6 @@ namespace Shooter
         }
 
         #endregion
-
 
         private void ShootWeapon(InputAction.CallbackContext obj)
         {

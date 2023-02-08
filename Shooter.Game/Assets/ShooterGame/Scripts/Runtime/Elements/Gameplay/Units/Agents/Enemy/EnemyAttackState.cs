@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter.AI
 {
+    /// <summary>
+    /// AI state where the enemies try to attack their target if it is visible and whithn attack range. If the target is no longer in the attack range they will go back to chase.
+    /// </summary>
     public class EnemyAttackState : AgentState
     {
         public float AttackCooldown { get; protected set; }
@@ -58,7 +61,7 @@ namespace Shooter.AI
 
             if (behaviour.Unit.AgentView.Animator)
                 behaviour.Unit.AgentView.Animator.SetFloat("Speed", 0, 0, Time.deltaTime);
-            behaviour.Unit.NaveMeshAgent.isStopped = true;
+            behaviour.Unit.NavMeshAgent.isStopped = true;
             Debug.Log("Entered Attack State!");
             return this;
         }

@@ -4,12 +4,14 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Component for agents which is responsible with storing data related to patrol points and getting the next patrol point in a patrol. 
+    /// </summary>
     public class AgentPatrolComponent : MonoBehaviour
     {
         public List<Transform> PatrolWaypoints = new List<Transform>();
         public Transform CurrentTarget = null;
         protected int CurrentPatrolIndex = 0;
-
         public bool HasWaypoints => PatrolWaypoints.Count > 0;
         public void SetPatrol(List<Transform> waypoints)
         {
@@ -33,13 +35,6 @@ namespace Shooter
             if (CurrentPatrolIndex >= PatrolWaypoints.Count)
                 CurrentPatrolIndex = 0;
             CurrentTarget = PatrolWaypoints[CurrentPatrolIndex];
-        }
-        public Transform GetCurrentPatrolTarget()
-        {
-            if (CurrentPatrolIndex < PatrolWaypoints.Count)
-                return PatrolWaypoints[CurrentPatrolIndex];
-            else
-                return null;
         }
     }
 }

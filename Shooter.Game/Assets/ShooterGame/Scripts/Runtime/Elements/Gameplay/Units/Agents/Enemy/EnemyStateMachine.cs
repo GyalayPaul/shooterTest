@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter.AI
 {
+    /// <summary>
+    /// State machine class for enemies in the game that handles patrolling, being idle, chasing the player and attacking. 
+    /// </summary>
     public class EnemyStateMachine: AgentStateMachine
     {
         public string CurrentStateName = "";

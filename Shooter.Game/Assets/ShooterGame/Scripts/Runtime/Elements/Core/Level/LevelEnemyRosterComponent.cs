@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Class that handles enemy respawning for an active level.
+    /// </summary>
     public class LevelEnemyRosterComponent
     {
         protected Level Level;
@@ -15,10 +18,11 @@ namespace Shooter
             Entries = entries;
             Spawners = spawners;
         }
-
+        /// <summary>
+        /// Checks to see if should spawn enemies to match desired roster enemy ammounts. 
+        /// </summary>
         public void UpdateEnemies()
         {
-
             foreach (var entry in Entries)
             {
                 while (Level.UnitManager.GetUnitsOfType(entry.Agent) < entry.Quantity)
@@ -27,7 +31,6 @@ namespace Shooter
                 }
             }
         }
-
         protected EnemySpawner GetRandomSpawner()
         {
             return Spawners[Random.Range(0, Spawners.Count)];

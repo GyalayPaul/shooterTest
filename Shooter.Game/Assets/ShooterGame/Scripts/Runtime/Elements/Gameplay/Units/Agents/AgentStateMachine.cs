@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter.AI
 {
+    /// <summary>
+    /// Generic state machine template.
+    /// </summary>
     public class AgentStateMachine : MonoBehaviour
     {
         public virtual AgentState CurrentState { get; protected set; }
@@ -25,9 +28,9 @@ namespace Shooter.AI
 
         protected virtual void DoStateTransition(AgentState nextState)
         {
-            //CurrentState.OnStateExit(nextState);
             if (nextState != CurrentState)
             {
+                CurrentState.OnStateExit(nextState);
                 nextState?.OnStateEnter(CurrentState, this);
                 CurrentState = nextState;
             }

@@ -13,6 +13,9 @@ namespace Shooter
         Friendly = 3,
     }
 
+    /// <summary>
+    /// Manager class that handles spawning units and dealing with unit deaths. 
+    /// </summary>
     public class UnitManager : MonoBehaviour
     {
         public Action<Damage> OnKillingBlowDealt;
@@ -21,9 +24,9 @@ namespace Shooter
         public AgentController SpawnEnemy(AgentDefinition unitDef, EnemySpawner spawner)
         {
             var Agent = SpawnUnit(unitDef, spawner.SpawnTransform.position) as AgentController;
-            Agent.NaveMeshAgent.enabled = false;
+            Agent.NavMeshAgent.enabled = false;
             Agent.PatrolComponent.SetPatrol(spawner.PotentialPatrols[UnityEngine.Random.Range(0, spawner.PotentialPatrols.Count)].Waypoints);
-            Agent.NaveMeshAgent.enabled = true;
+            Agent.NavMeshAgent.enabled = true;
             return Agent;
         }
 

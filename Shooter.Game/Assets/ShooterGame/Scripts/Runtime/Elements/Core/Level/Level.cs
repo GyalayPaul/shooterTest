@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Class that handles level logic, and the unit manager. Used to manage agents , the player and the player's score. 
+    /// </summary>
     public class Level : MonoBehaviour
     {
         public Action OnScoreChanged;

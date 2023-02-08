@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter.UI
 {
+    /// <summary>
+    /// Class used to show the HUD screen of a player in a given level.
+    /// </summary>
     public class UIHudScreen : MonoBehaviour
     {
         [SerializeField]
@@ -12,7 +15,6 @@ namespace Shooter.UI
         protected UIHealthDisplay HealthDisplay;
         [SerializeField]
         protected UIWeaponDisplay WeaponDisplay;
-
 
         public void Show(Level level)
         {

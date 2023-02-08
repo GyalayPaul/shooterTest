@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Generic model class for units. Contains definition and health. 
+    /// </summary>
     public class UnitModel
     {
         public UnitController Controller;
@@ -33,7 +36,6 @@ namespace Shooter
 
         public virtual void Die()
         {
-
             if (Alive)
             {
                 Alive = false;

@@ -7,12 +7,15 @@ using UnityEngine.AI;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Controller class for agents, units with advanced behaviours such as movement, AI, sight and attacks. 
+    /// </summary>
     public class AgentController : UnitController
     {
         public AgentModel AgentModel => Model as AgentModel;
         public AgentView AgentView => View as AgentView;
         public AgentDefinition Definition => AgentModel.AgentDefinition;
-        public NavMeshAgent NaveMeshAgent;
+        public NavMeshAgent NavMeshAgent;
         public AgentStateMachine StateMachine;
         public AgentPatrolComponent PatrolComponent;
         public AgentSightComponent SightComponent;
@@ -28,22 +31,19 @@ namespace Shooter
         }
         public void Attack(UnitController target)
         {
-            
             var damage = AgentModel.GetAttacKDamage();
             AgentView.HandleAttackEffects();
             damage.Apply(target);
         }
-
         public override void Die(Damage damageSource)
         {
             OnDeath?.Invoke(damageSource);
             StateMachine.enabled = false;
-            NaveMeshAgent.enabled = false;
+            NavMeshAgent.enabled = false;
             AgentView.DoDeathEffects();
-            transform.DOScale( AgentView.Animator!=null ? transform.localScale.x:0, 1f).onComplete=() => { SelfDestruct(); }; //todo: move to view and make less hardcoded
+            transform.DOScale( AgentView.Animator!=null ? transform.localScale.x: 0, 1f).onComplete=() => { SelfDestruct(); }; //todo: move to view and make less hardcoded
         }
-
-        public void SelfDestruct()
+        private void SelfDestruct()
         {
             Destroy(gameObject);
         }

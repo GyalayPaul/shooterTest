@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Class designed to handle an inventory of weapons for the player, handles creating and storing information about the player's weapons. 
+    /// </summary>
     public class PlayerArsenal
     {
         public UnitController Owner;

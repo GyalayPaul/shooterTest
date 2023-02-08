@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter.AI
 {
+    /// <summary>
+    /// Enemy patrol state where the enemy will follow waypoints and look for an hostile unit along the way. If it finds a hostile unit it goes into the chase state. 
+    /// </summary>
     public class EnemyPatrolState : AgentState
     {
         public float IdleBarkCooldown = 5f;
@@ -11,7 +14,7 @@ namespace Shooter.AI
         {
             var unit = stateManager.Unit;
             var behaviour = stateManager as EnemyStateMachine;
-            var navmeshAgent = stateManager.Unit.NaveMeshAgent;
+            var navmeshAgent = stateManager.Unit.NavMeshAgent;
 
             // If there's nowhere to patrol go to idle.
             if (!unit.CanPatrol)
@@ -34,7 +37,7 @@ namespace Shooter.AI
                 return OnStateExit(behaviour.ChaseState);
             }
 
-            stateManager.Unit.NaveMeshAgent.isStopped = false;
+            stateManager.Unit.NavMeshAgent.isStopped = false;
             // If reached a waypoint, move to the next one.
             if (navmeshAgent.remainingDistance < 0.25f)
             {
@@ -50,7 +53,7 @@ namespace Shooter.AI
 
         public override AgentState OnStateEnter(AgentState PreviousState, AgentStateMachine behaviour)
         {
-            var navmeshAgent = behaviour.Unit.NaveMeshAgent;
+            var navmeshAgent = behaviour.Unit.NavMeshAgent;
             navmeshAgent.isStopped = false;
             navmeshAgent.SetDestination(behaviour.Unit.PatrolComponent.CurrentTarget.position);
 

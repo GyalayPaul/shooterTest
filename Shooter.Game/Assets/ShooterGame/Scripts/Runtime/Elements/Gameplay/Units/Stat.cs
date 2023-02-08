@@ -5,10 +5,16 @@ using System;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Observable int class with a minimum and maximum value. Useful for stats such as health, armor, resistances etc. 
+    /// </summary>
     public class Stat
     {
         public int MaxValue = 100;
         public int MinValue = 0;
+
+        public Action<int> OnValueChanged;
+        public Action OnMinValueReached;
         public int CurrentValue
         {
             get
@@ -29,7 +35,7 @@ namespace Shooter
             }
         }
 
-        protected int CurrentValueInternal= 100;
+        protected int CurrentValueInternal = 100;
 
         /// <summary>
         /// Changes the stat's value (adds or subtracts) by the given ammount. 
@@ -40,9 +46,6 @@ namespace Shooter
             CurrentValue = Mathf.Clamp(CurrentValue + value, MinValue, MaxValue);
             if (CurrentValue == MinValue) OnMinValueReached?.Invoke();
         }
-
-        public Action<int> OnValueChanged;
-        public Action OnMinValueReached;
 
         public Stat(int maxValue, int currentValue, int minValue = 0)
         {

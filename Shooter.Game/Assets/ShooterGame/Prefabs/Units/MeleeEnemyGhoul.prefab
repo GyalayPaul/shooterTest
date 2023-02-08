@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   View: {fileID: 3234584357615918094}
-  NaveMeshAgent: {fileID: 8224603758906005272}
+  NavMeshAgent: {fileID: 8224603758906005272}
   StateMachine: {fileID: 1240745996886921537}
   PatrolComponent: {fileID: 0}
   SightComponent: {fileID: 0}

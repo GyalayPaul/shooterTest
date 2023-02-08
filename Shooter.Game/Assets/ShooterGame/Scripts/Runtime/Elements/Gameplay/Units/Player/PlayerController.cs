@@ -5,6 +5,9 @@ using UnityEngine;
 namespace Shooter
 
 {
+    /// <summary>
+    /// Controller class for player. Handles initialization and death, and has a component for Input.
+    /// </summary>
     public class PlayerController : UnitController
     {
         public PlayerModel PlayerModel => Model as PlayerModel;

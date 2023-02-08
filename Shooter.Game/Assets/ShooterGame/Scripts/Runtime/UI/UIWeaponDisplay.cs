@@ -7,9 +7,11 @@ using DG.Tweening;
 
 namespace Shooter.UI
 {
+    /// <summary>
+    /// Class used to show the current ammo of a given weapon. 
+    /// </summary>
     public class UIWeaponDisplay : MonoBehaviour
     {
-
         protected WeaponController CurrentWeapon { get; set; } = null;
         [SerializeField]
         protected TextMeshProUGUI AmmoLabel;
@@ -58,7 +60,7 @@ namespace Shooter.UI
         protected void UpdateAmmoBar()
         {
             AmmoBarFill.DOKill(false);
-            AmmoBarFill.DOFillAmount((float) CurrentWeapon.Model.CurrentMagazineAmmo / (float) CurrentWeapon.Model.Definition.BaseMagazineAmmoCapacity, BAR_ANIMATION_DURATION);
+            AmmoBarFill.DOFillAmount((float)CurrentWeapon.Model.CurrentMagazineAmmo / (float)CurrentWeapon.Model.Definition.BaseMagazineAmmoCapacity, BAR_ANIMATION_DURATION);
         }
     }
 }

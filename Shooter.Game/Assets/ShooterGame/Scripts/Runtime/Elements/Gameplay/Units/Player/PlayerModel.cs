@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+    /// <summary>
+    /// Model class for the player, contains an overriden constructor so that the player is initialized with at least 1 starter weapon, and contains the plyer arsenal class.
+    /// </summary>
     public class PlayerModel : UnitModel
     {
         public PlayerArsenal Arsenal;
@@ -22,10 +25,5 @@ namespace Shooter
             Health.OnMinValueReached += Die;
         }
 
-        public override void Die()
-        {
-
-            base.Die();
-        }
     }
 }
